@@ -26,7 +26,9 @@
         android:id="@+id/editTextTextPersonName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
@@ -36,13 +38,16 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="211dp" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
@@ -51,7 +56,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        tools:layout_editor_absoluteX="101dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
         tools:layout_editor_absoluteY="300dp" />
 
     <EditText
