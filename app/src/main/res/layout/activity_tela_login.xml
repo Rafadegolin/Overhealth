@@ -111,14 +111,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Não possui uma conta?"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textViewRegistro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Faça o registro"
-            android:textColor="@color/red" />/>
+            android:text="   Faça o registro"
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            android:textStyle="bold" />/>
     </LinearLayout>
 
     <Button
