@@ -147,25 +147,5 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.32999998" />
 
-    <Button
-        android:id="@+id/bt_facebook"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="32dp"
-        android:backgroundTint="@color/white"
-        android:drawableLeft="@drawable/ic_facebook"
-        android:paddingLeft="28dp"
-        android:text="Facebook"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bt_google"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/bt_google"
-        app:layout_constraintTop_toTopOf="@+id/bt_google" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "141760488263",
+    "project_id": "overhealth-a940c",
+    "storage_bucket": "overhealth-a940c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141760488263:android:ff9f0ac440ed5eb82c2262",
+        "android_client_info": {
+          "package_name": "com.OverhealthApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "141760488263-ad1kk354h3mnosf8d4jpjdjffuhfj3fb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3Ovosx8UqGA4Uyt6RMFVgW1gfeJ5qkVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "141760488263-ad1kk354h3mnosf8d4jpjdjffuhfj3fb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
