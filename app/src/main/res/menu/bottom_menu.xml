@@ -7,19 +7,19 @@
         android:icon="@drawable/ic_home"/>
 
     <item
-        android:id="@+id/agua"
-        android:title="Lembrete"
-        android:icon="@drawable/ic_water"/>
+        android:id="@+id/dietaGeralFragment"
+        android:title="Dieta"
+        android:icon="@drawable/ic_fastfood"/>
 
     <item
-        android:id="@+id/fab"
+        android:id="@+id/placeholder"
         android:title=""
         android:enabled="false"/>
 
     <item
-        android:id="@+id/perfil"
-        android:title="Outro"
-        android:icon="@drawable/ic_person_black"/>
+        android:id="@+id/treinos"
+        android:title="Treinos"
+        android:icon="@drawable/ic_treinos"/>
 
     <item
         android:id="@+id/configuracoes"

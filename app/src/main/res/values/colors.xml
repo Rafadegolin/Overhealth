@@ -10,4 +10,10 @@
     <color name="red">#C11515</color>
     <color name="primaryDark">#3262C4</color>
     <color name="lavanda">#8692f7</color>
+    <color name="ColorPrimaryLight">#E9F8F1</color>
+    <color name="colorAccent">#333333</color>
+    <color name="colorBackground">#EBEBEB</color>
+    <color name="colorTrendingStart">#00B09B</color>
+    <color name="colorTrendingEnd">#96C93D</color>
+    <color name="colorDivider">#D6D6D6</color>
 </resources>

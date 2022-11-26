@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Overhealth</string>
+    <string name="Alimentação">Lembrete</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bem_vindo">Bem vindo</string>
+    <string name="rafael">Rafael</string>
+    <string name="buscaFuncao">Busque por funções</string>
+    <string name="texto_novidade">Praia com saúde: veja 8 opções de alimentos práticos, baratos e nutritivos para a beira-mar.</string>
+    <string name="perfil_titulo">Perfil</string>
+    <string name="alimentacao_titulo">Alimentação</string>
+    <string name="calcular_imc_titulo">Calcular IMC</string>
+    <string name="ingestao_agua_titulo">Ingestão água</string>
+    <string name="novidade_titulo_trending">Novidade</string>
+    <string name="configuracoes_titulo">Configurações</string>
+    <string name="input_altura_calcular">Digite sua altura: (Exemplo 1.72)</string>
+    <string name="input_peso_calcular">Digite seu peso: (Exemplo 68.5)</string>
+    <string name="input_peso_agua">Digite seu peso em KG: (Exemplo 73.4)</string>
+    <string name="input_idade_agua">Digite sua idade:</string>
+    <string name="titulo_calculo_agua">Realize o cálculo da ingestão diária</string>
+
 </resources>
