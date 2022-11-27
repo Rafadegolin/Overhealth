@@ -10,73 +10,46 @@
         android:name="com.OverhealthApp.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
-
-        <action
-            android:id="@+id/action_home_to_alimentacao"
-            app:destination="@id/alimentacao" />
         <action
             android:id="@+id/action_home_to_perfil"
-            app:destination="@id/perfil" />
+            app:destination="@id/perfil"
+            app:popUpTo="@id/home"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_home_to_treinos"
-            app:destination="@id/treinos" />
+            app:destination="@id/treinos"
+            app:popUpTo="@id/home"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_home_to_configuracoes"
-            app:destination="@id/configuracoes" />
-        <action
-            android:id="@+id/action_home_to_calculoIMCFragment"
-            app:destination="@id/calculoIMCFragment" />
-        <action
-            android:id="@+id/action_home_to_lembreAguaFragment"
-            app:destination="@id/lembreAguaFragment" />
+            app:destination="@id/configuracoes"
+            app:popUpTo="@id/home"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_home_to_dietaGeralFragment"
-            app:destination="@id/dietaGeralFragment" />
+            app:destination="@id/dietaGeralFragment"
+            app:popUpTo="@id/home"
+            app:popUpToInclusive="true" />
     </fragment>
+
+    <fragment
+        android:id="@+id/dietaGeralFragment"
+        android:name="com.OverhealthApp.fragments.DietaGeralFragment"
+        android:label="fragment_dieta_geral"
+        tools:layout="@layout/fragment_dieta_geral"/>
 
     <fragment
         android:id="@+id/configuracoes"
         android:name="com.OverhealthApp.fragments.ConfiguracoesFragment"
         android:label="fragment_configuracoes"
-        tools:layout="@layout/fragment_configuracoes" />
+        tools:layout="@layout/fragment_configuracoes"/>
     <fragment
         android:id="@+id/perfil"
         android:name="com.OverhealthApp.fragments.PerfilFragment"
         android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" >
-
-    </fragment>
+        tools:layout="@layout/fragment_perfil"/>
     <fragment
         android:id="@+id/treinos"
         android:name="com.OverhealthApp.fragments.TreinoFragment"
-        android:label="TreinoFragment" >
-
-    </fragment>
-    <fragment
-        android:id="@+id/alimentacao"
-        android:name="com.OverhealthApp.fragments.AlimentacaoFragment"
-        android:label="AlimentacaoFragment" >
-
-        <action
-            android:id="@+id/action_alimentacao_to_home"
-            app:destination="@id/home" />
-    </fragment>
-    <fragment
-        android:id="@+id/calculoIMCFragment"
-        android:name="com.OverhealthApp.fragments.CalculoIMCFragment"
-        android:label="CalculoIMCFragment" >
-        <action
-            android:id="@+id/action_calculoIMCFragment_to_home"
-            app:destination="@id/home" />
-    </fragment>
-    <fragment
-        android:id="@+id/lembreAguaFragment"
-        android:name="com.OverhealthApp.fragments.LembreAguaFragment"
-        android:label="LembreAguaFragment" />
-    <fragment
-        android:id="@+id/dietaGeralFragment"
-        android:name="com.OverhealthApp.fragments.DietaGeralFragment"
-        android:label="fragment_dieta_geral"
-        tools:layout="@layout/fragment_dieta_geral" />
-
+        android:label="TreinoFragment"/>
 </navigation>
