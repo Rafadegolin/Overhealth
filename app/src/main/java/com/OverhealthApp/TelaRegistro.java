@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 
 import com.OverhealthApp.databinding.ActivityTelaRegistroBinding;
@@ -47,15 +48,14 @@ public class TelaRegistro extends AppCompatActivity {
                 String confirmaSenha = binding.inputConfirmaSenha.getText().toString();
 
                 if (email.isEmpty() || senha.isEmpty() || confirmaSenha.isEmpty() || usuario.isEmpty()) {
+                    Toast.makeText(TelaRegistro.this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
                     Snackbar popup = Snackbar.make(ok, "Preencha todos os campos!", Snackbar.LENGTH_SHORT);
-                    popup.show();
                 } else {
                     auth.createUserWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Snackbar popup = Snackbar.make(ok, "Sucesso a cadastrar usuário", Snackbar.LENGTH_SHORT);
-                                popup.show();
+                                Toast.makeText(TelaRegistro.this, "Sucesso ao cadastrar usuário", Toast.LENGTH_SHORT).show();
                                 binding.inputUsuario.setText(" ");
                                 binding.inputEmail.setText(" ");
                                 binding.inputSenha.setText(" ");
