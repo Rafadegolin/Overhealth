@@ -16,6 +16,8 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
 
@@ -51,24 +53,40 @@ public class TelaRegistro extends AppCompatActivity {
                     Toast.makeText(TelaRegistro.this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
                     Snackbar popup = Snackbar.make(ok, "Preencha todos os campos!", Snackbar.LENGTH_SHORT);
                 } else {
-                    auth.createUserWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(TelaRegistro.this, "Sucesso ao cadastrar usuário", Toast.LENGTH_SHORT).show();
-                                binding.inputUsuario.setText(" ");
-                                binding.inputEmail.setText(" ");
-                                binding.inputSenha.setText(" ");
-                                binding.inputConfirmaSenha.setText(" ");
-                        }
-                            else {
-                                task.getException();
+                    if (!senha.equals(confirmaSenha)) {
+                        Toast.makeText(TelaRegistro.this, senha + confirmaSenha, Toast.LENGTH_SHORT).show();
+                    } else {
+                        auth.createUserWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(TelaRegistro.this, "Sucesso ao cadastrar usuário", Toast.LENGTH_SHORT).show();
+                                    binding.inputUsuario.setText(" ");
+                                    binding.inputEmail.setText(" ");
+                                    binding.inputSenha.setText(" ");
+                                    binding.inputConfirmaSenha.setText(" ");
+                                } else {
+                                    String exception = " ";
 
-                            }
+                                    try {
+                                        throw task.getException();
+                                    } catch (FirebaseAuthWeakPasswordException e) {
+                                        exception = "Digite uma senha com no minimo 6 digitos";
+                                    } catch (FirebaseAuthInvalidCredentialsException e) {
+                                        exception = "Digite um e-mail valido";
+                                    } catch (FirebaseAuthUserCollisionException e) {
+                                        exception = "Esse e-mail já possui conta cadastrada";
+                                    } catch (Exception e) {
+                                        exception = "Erro a cadastrar o usúario" + e.getMessage();
+                                        e.printStackTrace();
+                                    }
+                                    Toast.makeText(TelaRegistro.this, exception, Toast.LENGTH_SHORT).show();
+
                                 }
-                            });
-                        }
-
+                            }
+                        });
+                    }
+                }
                     }
                 });
             }
