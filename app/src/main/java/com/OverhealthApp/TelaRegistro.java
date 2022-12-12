@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -31,6 +33,15 @@ public class TelaRegistro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_registro);
+
+        //botao ja possui conta
+        TextView bt = findViewById(R.id.jaTemConta);
+        bt.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(TelaRegistro.this, TelaLogin.class));
+            }
+        });
 
         //criando as bindings para cadastro
         binding = ActivityTelaRegistroBinding.inflate(getLayoutInflater());
