@@ -29,6 +29,7 @@
             tools:ignore="TextContrastCheck" />
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -40,6 +41,18 @@
             app:layout_constraintStart_toEndOf="@id/TextHello"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="TextContrastCheck" />
+
+        <ImageView
+            android:id="@+id/imageMenuHamb"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintBottom_toBottomOf="@id/TextHello"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/TextHello"
+            app:tint="@color/white" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -79,7 +92,7 @@
                 android:src="@drawable/ic_search"
                 app:tint="@color/lavanda"
                 tools:ignore="ImageContrastCheck" />
-            
+
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -116,7 +129,7 @@
                     android:layout_margin="8dp"
                     android:contentDescription="@string/app_name"
                     android:padding="8dp"
-                    android:src="@drawable/profile"/>
+                    android:src="@drawable/icon_profile"/>
                 
                 <TextView
                     android:layout_width="match_parent"

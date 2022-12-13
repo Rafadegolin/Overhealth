@@ -18,5 +18,11 @@
     <string name="input_peso_agua">Digite seu peso em KG: (Exemplo 73.4)</string>
     <string name="input_idade_agua">Digite sua idade:</string>
     <string name="titulo_calculo_agua">Realize o cálculo da ingestão diária</string>
+    <string name="profile_username">Rafael Degolin</string>
+    <string name="profile_email">rafadegolin@alunos.fho.edu.br</string>
+    <string name="profile_user_celular">(19) 99150-7752</string>
+    <string name="profile_pesoAtual">72 kg</string>
+    <string name="profile_alturaAtual">1,72 m</string>
+    <string name="profile_user_idade">22 anos</string>
 
 </resources>
