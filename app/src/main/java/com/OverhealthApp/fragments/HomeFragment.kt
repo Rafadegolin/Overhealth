@@ -20,6 +20,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding.layoutConfig.setOnClickListener { findNavController(it).navigate(R.id.action_home_to_configuracoes) }
         binding.layoutAlimentacao.setOnClickListener { findNavController(it).navigate(R.id.action_home_to_dietaGeralFragment) }
         binding.layoutPerfil.setOnClickListener { findNavController(it).navigate(R.id.action_home_to_perfil) }
+        binding.layoutAgua.setOnClickListener{ findNavController(it).navigate(R.id.action_home_to_lembreAguaFragment) }
+        binding.layoutIMC.setOnClickListener{ findNavController(it).navigate(R.id.action_home_to_calculoIMCFragment) }
+        binding.layoutAlimentacao.setOnClickListener{ findNavController(it).navigate(R.id.action_home_to_alimentacaoFragment) }
         return binding.root
     }
 }

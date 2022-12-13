@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,10 +15,8 @@ import android.widget.Toast;
 import com.OverhealthApp.databinding.ActivityTelaRegistroBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
@@ -28,20 +27,11 @@ public class TelaRegistro extends AppCompatActivity {
     private ActivityTelaRegistroBinding binding;
 
     private FirebaseAuth auth;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_registro);
-
-        //botao ja possui conta
-        TextView bt = findViewById(R.id.jaTemConta);
-        bt.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(TelaRegistro.this, TelaLogin.class));
-            }
-        });
 
         //criando as bindings para cadastro
         binding = ActivityTelaRegistroBinding.inflate(getLayoutInflater());
@@ -62,7 +52,6 @@ public class TelaRegistro extends AppCompatActivity {
 
                 if (email.isEmpty() || senha.isEmpty() || confirmaSenha.isEmpty() || usuario.isEmpty()) {
                     Toast.makeText(TelaRegistro.this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
-                    Snackbar popup = Snackbar.make(ok, "Preencha todos os campos!", Snackbar.LENGTH_SHORT);
                 } else {
                     if (!senha.equals(confirmaSenha)) {
                         Toast.makeText(TelaRegistro.this, senha + confirmaSenha, Toast.LENGTH_SHORT).show();
@@ -100,6 +89,11 @@ public class TelaRegistro extends AppCompatActivity {
                 }
                     }
                 });
+            }
+
+            public void jaPossuiConta(View view){
+                Intent i = new Intent(TelaRegistro.this, TelaLogin.class);
+                startActivity(i);
             }
 }
 

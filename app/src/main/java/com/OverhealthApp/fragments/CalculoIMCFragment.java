@@ -1,5 +1,6 @@
 package com.OverhealthApp.fragments;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.OverhealthApp.R;
 
@@ -67,6 +69,8 @@ public class CalculoIMCFragment extends Fragment {
     private EditText inputAlturaCalcular;
     private Button btn_calcularIMC;
 
+    Activity activity;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -81,36 +85,33 @@ public class CalculoIMCFragment extends Fragment {
 
         btn_calcularIMC.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View CalculoIMCFragment){
                 Log.d("ClicouCalular!", "calculou");
+                Double peso = Double.parseDouble(inputPesoCalcular.getText().toString());
+                Double altura = Double.parseDouble(inputAlturaCalcular.getText().toString());
+                Double resultado = peso / (altura * altura);
 
+                if (inputPesoCalcular.getText().toString().equals("") || inputAlturaCalcular.getText().toString().equals("")){
+                    Toast.makeText(getActivity(), "Precisa preencher os campos", Toast.LENGTH_SHORT).show();
+                } else if (inputPesoCalcular.getText().toString().equals("")) {
+                    Toast.makeText(getActivity(), "Precisa digitar um peso", Toast.LENGTH_SHORT).show();
+                } else if (inputAlturaCalcular.getText().toString().equals("")){
+                    Toast.makeText(getActivity(), "Precisa digitar uma altura", Toast.LENGTH_SHORT).show();
+                } else if (resultado < 18.5){
+                    resultadoCalculo.setText("Magreza");
+                } else if (resultado <= 18.5 || resultado < 24.9){
+                    resultadoCalculo.setText("Normal");
+                }else if (resultado <= 25 || resultado < 29.9){
+                    resultadoCalculo.setText("Sobrepeso obesidade grau I");
+                }else if (resultado <= 30 || resultado < 39.9){
+                    resultadoCalculo.setText("Obesidade grau II");
+                }else if (resultado >= 40){
+                    resultadoCalculo.setText("Obesidade grave grau III");
+                }
             }
         });
 
         return CalculoIMCFragment;
     }
-
-    public void funcaoCalcularIMC (View view){
-        Double peso = Double.parseDouble(inputPesoCalcular.getText().toString());
-        Double altura = Double.parseDouble(inputAlturaCalcular.getText().toString());
-        Double resultado = peso / (altura * altura);
-
-        if (inputPesoCalcular.getText().toString().isEmpty() && inputAlturaCalcular.getText().toString().isEmpty()){
-            resultadoCalculo.setText("Você precisa preencher os campos!");
-        } else if (inputPesoCalcular.getText().toString().isEmpty()) {
-            resultadoCalculo.setText("Você precisa digitar um peso!");
-        } else if (inputAlturaCalcular.getText().toString().isEmpty()){
-            resultadoCalculo.setText("Você precisa digitar uma altura!");
-        } else if (resultado < 18.5){
-            resultadoCalculo.setText("Magreza");
-        } else if (resultado <= 18.5 || resultado < 24.9){
-            resultadoCalculo.setText("Normal");
-        }else if (resultado <= 25 || resultado < 29.9){
-            resultadoCalculo.setText("Sobrepeso obesidade grau I");
-        }else if (resultado <= 30 || resultado < 39.9){
-            resultadoCalculo.setText("Obesidade grau II");
-        }else if (resultado >= 40){
-            resultadoCalculo.setText("Obesidade grave grau III");
-        }
-    }
+    
 }

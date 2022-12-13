@@ -30,6 +30,21 @@
             app:destination="@id/dietaGeralFragment"
             app:popUpTo="@id/home"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_home_to_alimentacaoFragment"
+            app:destination="@id/alimentacaoFragment"
+            app:popUpTo="@id/home"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_home_to_lembreAguaFragment"
+            app:destination="@id/lembreAguaFragment"
+            app:popUpTo="@id/home"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_home_to_calculoIMCFragment"
+            app:destination="@id/calculoIMCFragment"
+            app:popUpTo="@id/home"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
@@ -52,4 +67,16 @@
         android:id="@+id/treinos"
         android:name="com.OverhealthApp.fragments.TreinoFragment"
         android:label="TreinoFragment"/>
+    <fragment
+        android:id="@+id/alimentacaoFragment"
+        android:name="com.OverhealthApp.fragments.AlimentacaoFragment"
+        android:label="AlimentacaoFragment" />
+    <fragment
+        android:id="@+id/lembreAguaFragment"
+        android:name="com.OverhealthApp.fragments.LembreAguaFragment"
+        android:label="LembreAguaFragment" />
+    <fragment
+        android:id="@+id/calculoIMCFragment"
+        android:name="com.OverhealthApp.fragments.CalculoIMCFragment"
+        android:label="CalculoIMCFragment" />
 </navigation>

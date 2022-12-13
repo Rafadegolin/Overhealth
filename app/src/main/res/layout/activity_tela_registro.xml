@@ -127,10 +127,11 @@
         app:layout_constraintTop_toBottomOf="@+id/inputConfirmaSenha" />
 
     <TextView
-        android:id="@+id/jaTemConta"
+        android:id="@+id/textViewPossuiConta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:onClick="jaPossuiConta"
         android:text="Ja possui conta?"
         android:textColor="@color/white"
         android:textSize="16sp"

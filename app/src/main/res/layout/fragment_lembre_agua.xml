@@ -135,8 +135,8 @@
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/buttonshape"
+            android:onClick="CalcularAgua"
             android:text="Calcular"
-            android:onClick="funcaoCalcularIMC"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             tools:ignore="TextContrastCheck" />
