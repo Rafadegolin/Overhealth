@@ -11,6 +11,12 @@ import androidx.navigation.Navigation.findNavController
 import com.OverhealthApp.R
 import com.OverhealthApp.databinding.FragmentHomeBinding
 
+import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthInvalidUserException
+import com.google.firebase.ktx.Firebase
+
 class HomeFragment : Fragment(R.layout.fragment_home) {
     private lateinit var binding: FragmentHomeBinding
 
